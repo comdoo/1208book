@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생 도서 공유 플랫폼</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>학생 도서 공유 플랫폼</h1>
+        <nav>
+            <div id="userInfo" class="hidden">
+                <span id="userName"></span>님 환영합니다
+                <button id="logoutBtn">로그아웃</button>
+            </div>
+            <div id="authButtons">
+                <button id="loginBtn">로그인</button>
+                <button id="registerBtn">회원가입</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 로그인 폼 -->
+        <div id="loginForm" class="form-container hidden">
+            <h2>로그인</h2>
+            <form>
+                <input type="email" name="email" placeholder="이메일" required>
+                <input type="password" name="password" placeholder="비밀번호" required>
+                <button type="submit">로그인</button>
+            </form>
+        </div>
+
+        <!-- 회원가입 폼 -->
+        <div id="registerForm" class="form-container hidden">
+            <h2>회원가입</h2>
+            <form>
+                <input type="text" name="name" placeholder="이름" required>
+                <input type="email" name="email" placeholder="이메일" required>
+                <input type="password" name="password" placeholder="비밀번호" required>
+                <input type="password" name="passwordConfirm" placeholder="비밀번호 확인" required>
+                <button type="submit">가입하기</button>
+            </form>
+        </div>
+
+        <!-- 도서 목록 -->
+        <section id="bookSection" class="hidden">
+            <h2>도서 목록</h2>
+            <div class="button-group">
+                <button id="addBookBtn" class="action-btn">공유도서 입력</button>
+                <button id="showBorrowedBtn" class="action-btn">대출도서 보기</button>
+                <button id="showAllBtn" class="action-btn">전체도서 보기</button>
+            </div>
+            <div class="table-container">
+                <table id="bookTable">
+                    <thead>
+                        <tr>
+                            <th>제목</th>
+                            <th>저자</th>
+                            <th>분류</th>
+                            <th>공유자</th>
+                            <th>좋아요</th>
+                            <th>상태</th>
+                            <th>반납예정일</th>
+                            <th>대출/반납</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bookList">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 도서 추가 폼 -->
+        <div id="addBookForm" class="form-container hidden">
+            <h2>도서 공유하기</h2>
+            <form>
+                <input type="text" name="title" placeholder="도서명" required>
+                <input type="text" name="author" placeholder="저자" required>
+                <select name="category" required>
+                    <option value="">분류 선택</option>
+                    <option value="소설">소설</option>
+                    <option value="시/에세이">시/에세이</option>
+                    <option value="인문">인문</option>
+                    <option value="과학">과학</option>
+                    <option value="컴퓨터/IT">컴퓨터/IT</option>
+                    <option value="자기계발">자기계발</option>
+                </select>
+                <textarea name="description" placeholder="도서 설명"></textarea>
+                <button type="submit">공유하기</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
